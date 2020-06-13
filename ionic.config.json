@@ -1,0 +1,7 @@
+{
+  "name": "truckerrelay",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
