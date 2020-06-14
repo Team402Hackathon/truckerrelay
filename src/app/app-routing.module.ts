@@ -4,12 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'fretes',
     pathMatch: 'full'
-  },
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
   {
     path: 'fretes',
@@ -18,6 +14,10 @@ const routes: Routes = [
   {
     path: 'dados-frete',
     loadChildren: () => import('./dados-frete/dados-frete.module').then( m => m.DadosFretePageModule)
+  },
+  {
+    path: 'meu-frete',
+    loadChildren: () => import('./meu-frete/meu-frete.module').then( m => m.MeuFretePageModule)
   }
 ];
 

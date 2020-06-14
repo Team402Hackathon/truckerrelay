@@ -8,24 +8,32 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-card *ngFor="let frete of fretes">
+  <ion-card *ngFor="let frete of fretes; let i = index">
     <ion-card-header>
       <ion-card-subtitle>
         de {{frete.from}} para
       </ion-card-subtitle>
       <ion-card-title color="warning">{{frete.to}}</ion-card-title>
     </ion-card-header>
+    <ion-card-content>
+      Tempo de viagem: {{frete.time}}
+    </ion-card-content>
     <ion-grid>
       <ion-row justify-content-around>
         <ion-col>
-         <ion-text>
-          <p><strong>{{frete.cash}}</strong></p>
-         </ion-text>
+          <ion-button expand="block" fill="clear">
+            <ion-icon color="warning" slot="icon-only" name="map-outline"></ion-icon>
+          </ion-button>
         </ion-col>
-        <ion-col (click)="openDadosFrete()">
-          <ion-text>
-            <p>Mais informações...</p>
-          </ion-text>
+        <ion-col>
+          <ion-button expand="block" fill="clear" (click)="aceitarFrete(i)">
+            <ion-icon color="success" slot="icon-only" name="checkbox-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" fill="clear" (click)="openDadosFrete(i)">
+            <ion-icon color="primary" slot="icon-only" name="information-circle-outline"></ion-icon>
+          </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

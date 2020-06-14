@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Meu Frete</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-text class="ion-text-center">
+    <h6>Você tem um frete em execução</h6>
+  </ion-text>
+  <br/>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        de {{frete?.from}} para
+      </ion-card-subtitle>
+      <ion-card-title color="warning">{{frete?.to}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Tempo de viagem: {{frete?.time}}
+    </ion-card-content>
+    <ion-grid>
+      <ion-row justify-content-around>
+        <ion-col>
+          <ion-button expand="block" fill="clear">
+            <ion-icon color="warning" slot="icon-only" name="map-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+          <ion-col><ion-button expand="block" fill="clear">
+            <ion-icon color="danger" slot="icon-only" name="close-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" fill="clear" (click)="openDadosFrete()">
+            <ion-icon color="primary" slot="icon-only" name="information-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid><ion-grid>
+      <ion-row justify-content-around>
+        <ion-col>
+          <ion-button expand="block" fill="clear" (click)="openDadosFrete()">
+            Informar problema
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" fill="clear" (click)="openDadosFrete()">
+            Realizar entrega
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" fill="clear" (click)="trocarMotorista()">
+            Trocar mostorista
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
