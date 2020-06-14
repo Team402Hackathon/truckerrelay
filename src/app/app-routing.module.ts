@@ -10,6 +10,14 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'fretes',
+    loadChildren: () => import('./fretes/fretes.module').then( m => m.FretesPageModule)
+  },
+  {
+    path: 'dados-frete',
+    loadChildren: () => import('./dados-frete/dados-frete.module').then( m => m.DadosFretePageModule)
   }
 ];
 

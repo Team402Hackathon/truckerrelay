@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Fretes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card *ngFor="let frete of fretes">
+    <ion-card-header>
+      <ion-card-subtitle>
+        de {{frete.from}} para
+      </ion-card-subtitle>
+      <ion-card-title color="warning">{{frete.to}}</ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row justify-content-around>
+        <ion-col>
+         <ion-text>
+          <p><strong>{{frete.cash}}</strong></p>
+         </ion-text>
+        </ion-col>
+        <ion-col (click)="openDadosFrete()">
+          <ion-text>
+            <p>Mais informações...</p>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
