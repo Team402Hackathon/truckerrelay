@@ -11,6 +11,43 @@ import { LoadingController, IonSlides, AlertController, NavController } from '@i
 export class MeuFretePage implements OnInit {
 
   frete:Frete
+  fretes:Array<Frete> = [
+    {
+      indice: 1,
+      from: "São Paulo, SP",
+      to: "Rio de Janeiro, RJ",
+      cash: "R$ 1.500,00",
+      time: "6 hrs"
+    },
+    {
+      indice: 2,
+      from: "Holambra, SP",
+      to: "São Paulo, SP",
+      cash: "R$ 500,00",
+      time: "8 hrs"
+    },
+    {
+      indice: 3,
+      from: "São Paulo, SP",
+      to: "Paraná, PR",
+      cash: "R$ 1.000,00",
+      time: "7 hrs"
+    },
+    {
+      indice: 4,
+      from: "Parana, PR",
+      to: "Santa Catarina, SC",
+      cash: "R$ 1.000,00",
+      time: "4 hrs"
+    },
+    {
+      indice: 5,
+      from: "Santa Catarina, SC",
+      to: "Rio Grande de Sul, RS",
+      cash: "R$ 1.000,00",
+      time: "9 hrs"
+    },
+  ]
 
   constructor(
     private baselocalService:BaselocalService,
@@ -60,6 +97,16 @@ export class MeuFretePage implements OnInit {
       numero = numero + Math.floor(Math.random() * max + 1).toString()
     }
     return numero
+  }
+
+  realizarEntrega() {
+    this.baselocalService.deleteDados("meufrete").then(() => {
+      this.navCtrl.navigateRoot("/fretes")
+    })
+  }
+
+  openDadosFrete() {
+    this.navCtrl.navigateForward("/dados-frete")
   }
 
   async presentLoading() {
